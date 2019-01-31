@@ -1,0 +1,5 @@
+EXPORT Crude_Rate_Calculation(Count1, Population) := FUNCTION
+Crude_Rate := (Count1/Population) * 100000;
+Return Crude_Rate;
+
+END;
