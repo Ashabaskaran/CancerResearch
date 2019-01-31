@@ -1,0 +1,435 @@
+/*=========================================Cancer Research Project=======================================*/
+
+// Creating Module for reading files
+
+IMPORT CancerResearch.Record_Layout as CR;
+
+EXPORT ReadFiles := MODULE
+
+
+//============================================1999-2006==============================================================
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite := DATASET('~CancerResearch::1999_2006::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge := DATASET('~CancerResearch::1999_2006::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea := DATASET('~CancerResearch::1999_2006::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite := DATASET('~CancerResearch::1999_2006::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ := DATASET('~CancerResearch::1999_2006::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR := DATASET('~CancerResearch::1999_2006::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite := DATASET('~CancerResearch::1999_2006::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ := DATASET('~CancerResearch::1999_2006::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR := DATASET('~CancerResearch::1999_2006::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite := DATASET('~CancerResearch::1999_2006::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+
+
+
+//============================================1999-2007==============================================================
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2007 := DATASET('~CancerResearch::1999_2007::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2007 := DATASET('~CancerResearch::1999_2007::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2007 := DATASET('~CancerResearch::1999_2007::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2007 := DATASET('~CancerResearch::1999_2007::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2007 := DATASET('~CancerResearch::1999_2007::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2007 := DATASET('~CancerResearch::1999_2007::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2007 := DATASET('~CancerResearch::1999_2007::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2007 := DATASET('~CancerResearch::1999_2007::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2007 := DATASET('~CancerResearch::1999_2007::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2007 := DATASET('~CancerResearch::1999_2007::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+		
+
+//============================================1999-2008==============================================================
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2008 := DATASET('~CancerResearch::1999_2008::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2008 := DATASET('~CancerResearch::1999_2008::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2008 := DATASET('~CancerResearch::1999_2008::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2008 := DATASET('~CancerResearch::1999_2007::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2008 := DATASET('~CancerResearch::1999_2008::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2008 := DATASET('~CancerResearch::1999_2008::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2008 := DATASET('~CancerResearch::1999_2008::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2008 := DATASET('~CancerResearch::1999_2008::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2008 := DATASET('~CancerResearch::1999_2008::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2008 := DATASET('~CancerResearch::1999_2008::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+		
+
+//============================================1999-2009==============================================================
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2009 := DATASET('~CancerResearch::1999_2009::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2009 := DATASET('~CancerResearch::1999_2009::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2009 := DATASET('~CancerResearch::1999_2009::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2009 := DATASET('~CancerResearch::1999_2009::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2009 := DATASET('~CancerResearch::1999_2009::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2009 := DATASET('~CancerResearch::1999_2009::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2009 := DATASET('~CancerResearch::1999_2009::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2009 := DATASET('~CancerResearch::1999_2009::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2009 := DATASET('~CancerResearch::1999_2009::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2009 := DATASET('~CancerResearch::1999_2009::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+		
+		
+//============================================1999-2010==============================================================		
+		
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2010 := DATASET('~CancerResearch::1999_2010::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2010 := DATASET('~CancerResearch::1999_2010::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2010 := DATASET('~CancerResearch::1999_2010::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2010 := DATASET('~CancerResearch::1999_2010::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2010 := DATASET('~CancerResearch::1999_2010::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2010 := DATASET('~CancerResearch::1999_2010::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2010 := DATASET('~CancerResearch::1999_2010::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2010 := DATASET('~CancerResearch::1999_2010::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2010 := DATASET('~CancerResearch::1999_2010::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2010 := DATASET('~CancerResearch::1999_2010::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+
+//============================================1999-2011==============================================================
+
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2011 := DATASET('~CancerResearch::1999_2011::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2011 := DATASET('~CancerResearch::1999_2011::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2011 := DATASET('~CancerResearch::1999_2011::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2011 := DATASET('~CancerResearch::1999_2011::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2011 := DATASET('~CancerResearch::1999_2011::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2011 := DATASET('~CancerResearch::1999_2011::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2011 := DATASET('~CancerResearch::1999_2011::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2011 := DATASET('~CancerResearch::1999_2011::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2011 := DATASET('~CancerResearch::1999_2011::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2011 := DATASET('~CancerResearch::1999_2011::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+		
+//============================================1999-2012==============================================================
+
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2012 := DATASET('~CancerResearch::1999_2012::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2012 := DATASET('~CancerResearch::1999_2012::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2012 := DATASET('~CancerResearch::1999_2012::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2012 := DATASET('~CancerResearch::1999_2012::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2012 := DATASET('~CancerResearch::1999_2012::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2012 := DATASET('~CancerResearch::1999_2012::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2012 := DATASET('~CancerResearch::1999_2012::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2012 := DATASET('~CancerResearch::1999_2012::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2012 := DATASET('~CancerResearch::1999_2012::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2012 := DATASET('~CancerResearch::1999_2012::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+
+//============================================1999-2013==============================================================
+
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2013 := DATASET('~CancerResearch::1999_2013::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2013 := DATASET('~CancerResearch::1999_2013::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2013 := DATASET('~CancerResearch::1999_2013::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2013 := DATASET('~CancerResearch::1999_2013::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2013 := DATASET('~CancerResearch::1999_2013::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2013 := DATASET('~CancerResearch::1999_2013::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2013 := DATASET('~CancerResearch::1999_2013::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2013 := DATASET('~CancerResearch::1999_2013::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2013 := DATASET('~CancerResearch::1999_2013::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2013 := DATASET('~CancerResearch::1999_2013::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//============================================1999-2014==============================================================
+
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2014 := DATASET('~CancerResearch::1999_2014::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2014 := DATASET('~CancerResearch::1999_2014::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2014 := DATASET('~CancerResearch::1999_2014::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2014 := DATASET('~CancerResearch::1999_2014::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2014 := DATASET('~CancerResearch::1999_2014::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2014 := DATASET('~CancerResearch::1999_2014::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2014 := DATASET('~CancerResearch::1999_2014::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2014 := DATASET('~CancerResearch::1999_2014::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2014 := DATASET('~CancerResearch::1999_2014::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2014 := DATASET('~CancerResearch::1999_2014::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+//============================================1999-2015==============================================================
+
+//---------------------------------------------Read BrainBySite----------------------------------------
+
+		EXPORT Read_BrainBySite_2015 := DATASET('~CancerResearch::1999_2015::BrainBySite',CR.BrainBySite,CSV(SEPARATOR('|'),HEADING(1)));
+//---------------------------------------------Read ByAge----------------------------------------
+
+		EXPORT Read_ByAge_2015 := DATASET('~CancerResearch::1999_2015::ByAge',CR.ByAge,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//---------------------------------------------Read ByArea----------------------------------------
+
+		EXPORT Read_ByArea_2015 := DATASET('~CancerResearch::1999_2015::ByArea',CR.ByArea,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ByArea_County----------------------------------------
+
+		EXPORT Read_ByArea_County_2015 := DATASET('~CancerResearch::1999_2015::ByArea',CR.ByArea_County_2015,CSV(SEPARATOR('|'),HEADING(1)));		
+		
+//---------------------------------------------Read BySite----------------------------------------
+
+		EXPORT Read_BySite_2015 := DATASET('~CancerResearch::1999_2015::BySite',CR.BySite,CSV(SEPARATOR('|'),HEADING(1)));
+			
+//---------------------------------------------Read ChildByAge_ADJ-------------------------------------------------
+
+		EXPORT Read_ChildByAge_ADJ_2015 := DATASET('~CancerResearch::1999_2015::ChildByAge_ADJ',CR.ChildByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));	
+		
+//-----------------------------------------------Read ChildByAge_CR----------------------------------------
+
+		EXPORT Read_ChildByAge_CR_2015 := DATASET('~CancerResearch::1999_2015::ChildByAge_CR',CR.ChildByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ChildBySite----------------------------------------
+
+		EXPORT Read_ChildBySite_2015 := DATASET('~CancerResearch::1999_2015::ChildBySite',CR.ChildBySite,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//--------------------------------------------Read ICCCByAge_ADJ----------------------------------------
+
+		EXPORT Read_ICCCByAge_ADJ_2015 := DATASET('~CancerResearch::1999_2015::ICCCByAge_ADJ',CR.ICCCByAge_ADJ,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCByAge_CR----------------------------------------
+
+		EXPORT Read_ICCCByAge_CR_2015 := DATASET('~CancerResearch::1999_2015::ICCCByAge_CR',CR.ICCCByAge_CR,CSV(SEPARATOR('|'),HEADING(1)));
+		
+//---------------------------------------------Read ICCCBySite----------------------------------------
+
+		EXPORT Read_ICCCBySite_2015 := DATASET('~CancerResearch::1999_2015::ICCCBySite',CR.ICCCBySite,CSV(SEPARATOR('|'),HEADING(1)));		
+		
+		
+		
+		
+END;		
+				
+		
+		
+		
+		
+		
+			
