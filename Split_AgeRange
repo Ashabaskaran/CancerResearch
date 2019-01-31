@@ -1,0 +1,198 @@
+IMPORT CancerResearch.Record_Layout as RL;
+
+// Importing String separation Function
+IMPORT STD;
+
+//Creating Module for Spliting Age in multiple files
+EXPORT Split_Age_Range := MODULE
+
+//================================================================Split_Age_BrainBySite==========================================================================
+//Function for Spliting Age field in BrainBySite Dataset
+//Dataset(RL.BrainBySite) = Record layout of the input dataset
+EXPORT Split_Age_BrainBySite(DATASET(RL.BrainBySite) DS) := FUNCTION
+
+//--------------------------------------------------------------------------------------TRANFORM FUNCTION--------------------------------------------------------------------------------
+/*RL.Split_BrainBySite = New Record Layout/Output record Layout
+SplitAge = Tranform Function Name
+RL.BrainBySite = Old Record Layout/Input Record Layout
+L refers input
+SELF refers output*/
+
+ RL.Split_BrainBySite SplitAge_brainbysite(RL.BrainBySite L) := TRANSFORM
+
+// To Find '-' string in L.age field and locating its first instance position and assigning the value to Hyphen_pos
+Hyphen_Pos := std.str.find(L.Age,'-',1);
+Plus_Pos := std.str.find(L.Age,'+',1);
+
+//If '-' is located in Age field, then we are extracting the value before '-' as From_Age
+SELF.From_Age :=  IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(hyphen_Pos-1)], IF (Plus_pos > 0, (INTEGER) L.Age[1..(Plus_Pos-1)], 0));
+
+//If '-' is located in Age field, then we are extracting the value After '-' as To_Age
+SELF.To_Age   := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..], 999);
+
+//All other values are the same
+SELF := L;
+
+END;
+
+
+//Reading each record from the input Dataset(Input parameter) and mention the tranform function name to perform respective action on the dataset
+DS_BrainBySite := PROJECT(DS,SplitAge_brainbysite(LEFT));
+
+Return DS_BrainBySite;
+
+
+END;
+
+//=================================================================Split_Age_ByAge===============================================================
+
+EXPORT Split_Age_ByAge (DATASET(RL.ByAge) DS1) := FUNCTION
+
+RL.Split_ByAge SplitAge_byage(RL.ByAge L) := TRANSFORM
+
+Hyphen_Pos := std.str.find(L.Age,'-',1);
+Plus_Pos := std.str.find(L.Age,'+',1);
+LessThan_pos := std.str.find(L.Age,'<',1);
+
+Self.From_Age := IF(Hyphen_Pos>0, (INTEGER) L.Age[1..(Hyphen_Pos-1)], IF(Plus_Pos>0, (INTEGER) L.Age[1..(Plus_Pos-1)], IF (LessThan_Pos >0, (INTEGER) L.Age[1..(LessThan_Pos-1)],0)));
+Self.To_Age := IF(Hyphen_Pos>0, (INTEGER) L.Age[(Hyphen_Pos+1)..], IF(LessThan_Pos > 0, (INTEGER) L.Age[(LessThan_Pos+1)..],999));
+SELF := L;
+
+END;
+
+DS1_ByAge := PROJECT(DS1, SplitAge_byage(LEFT));
+
+Return DS1_ByAge;
+
+END;
+
+
+//===========================================================Split_Age_ChildByAge_ADJ====================================================================
+
+EXPORT Split_Age_ChildByAge_ADJ(DATASET(RL.ChildByAge_ADJ)DS2) := FUNCTION
+
+
+RL.Split_ChildByAge_ADJ SplitAge_ChildByAge_ADJ(RL.ChildByAge_ADJ L) := TRANSFORM
+
+Hyphen_Pos := Std.str.find(L.Age,'-',1);
+
+SELF.From_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(Hyphen_Pos-1)],0);
+SELF.To_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..],999);
+SELF := L;
+
+END;
+
+DS2_ChildByAge_ADJ := PROJECT(DS2,SplitAge_ChildByAge_ADJ(LEFT));
+
+Return DS2_ChildByAge_ADJ;
+END;
+
+
+//===========================================================Split_Age_ChildByAge_CR====================================================================
+
+EXPORT Split_Age_ChildByAge_CR(DATASET(RL.ChildByAge_CR)DS3) := FUNCTION
+
+
+RL.Split_ChildByAge_CR SplitAge_ChildByAge_CR(RL.ChildByAge_CR L) := TRANSFORM
+
+Hyphen_Pos := Std.str.find(L.Age,'-',1);
+LessThan_pos := std.str.find(L.Age,'<',1);
+
+SELF.From_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(Hyphen_Pos-1)], IF (LessThan_Pos >0, (INTEGER) L.Age[1..(LessThan_Pos-1)],0));
+SELF.To_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..], IF(LessThan_Pos > 0, (INTEGER) L.Age[(LessThan_Pos+1)..],999));
+SELF := L;
+
+END;
+
+DS3_ChildByAge_CR := PROJECT(DS3,SplitAge_ChildByAge_CR(LEFT));
+
+Return DS3_ChildByAge_CR;
+
+END;
+
+//===========================================================Split_Age_ChildBySite====================================================================
+
+EXPORT Split_Age_ChildBySite(DATASET(RL.ChildBySite)DS4) := FUNCTION
+
+
+RL.Split_ChildBySite SplitAge_ChildBySite(RL.ChildBySite L) := TRANSFORM
+
+Hyphen_Pos := Std.str.find(L.Age,'-',1);
+
+SELF.From_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(Hyphen_Pos-1)], 0);
+SELF.To_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..],999);
+SELF := L;
+
+END;
+
+DS4_ChildBySite := PROJECT(DS4,SplitAge_ChildBySite(LEFT));
+
+Return DS4_ChildBySite;
+
+END;
+
+//===========================================================Split_Age_ICCCByAge_ADJ====================================================================
+
+EXPORT Split_Age_ICCCByAge_ADJ(DATASET(RL.ICCCByAge_ADJ)DS5) := FUNCTION
+
+
+RL.Split_ICCCByAge_ADJ SplitAge_ICCCByAge_ADJ(RL.ICCCByAge_ADJ L) := TRANSFORM
+
+Hyphen_Pos := Std.str.find(L.Age,'-',1);
+
+SELF.From_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(Hyphen_Pos-1)], 0);
+SELF.To_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..],999);
+SELF := L;
+
+END;
+
+DS5_ICCCByAge_ADJ := PROJECT(DS5,SplitAge_ICCCByAge_ADJ(LEFT));
+
+Return DS5_ICCCByAge_ADJ;
+
+END;
+
+//===========================================================Split_Age_ICCCByAge_CR====================================================================
+
+EXPORT Split_Age_ICCCByAge_CR(DATASET(RL.ICCCByAge_CR)DS6) := FUNCTION
+
+
+RL.Split_ICCCByAge_CR SplitAge_ICCCByAge_CR(RL.ICCCByAge_CR L) := TRANSFORM
+
+Hyphen_Pos := Std.str.find(L.Age,'-',1);
+LessThan_pos := std.str.find(L.Age,'<',1);
+
+SELF.From_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(Hyphen_Pos-1)], IF (LessThan_Pos >0, (INTEGER) L.Age[1..(LessThan_Pos-1)],0));
+SELF.To_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..], IF(LessThan_Pos > 0, (INTEGER) L.Age[(LessThan_Pos+1)..],999));
+SELF := L;
+
+END;
+
+DS6_ICCCByAge_CR := PROJECT(DS6,SplitAge_ICCCByAge_CR(LEFT));
+
+Return DS6_ICCCByAge_CR;
+
+END;
+
+//===========================================================Split_Age_ICCCBySite====================================================================
+
+EXPORT Split_Age_ICCCBySite(DATASET(RL.ICCCBySite)DS7) := FUNCTION
+
+
+RL.Split_ICCCBySite SplitAge_ICCCBySite(RL.ICCCBySite L) := TRANSFORM
+
+Hyphen_Pos := Std.str.find(L.Age,'-',1);
+
+SELF.From_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[1..(Hyphen_Pos-1)],0);
+SELF.To_Age := IF(Hyphen_Pos > 0, (INTEGER) L.Age[(Hyphen_Pos+1)..],999);
+SELF := L;
+
+END;
+
+DS7_ICCCBySite := PROJECT(DS7,SplitAge_ICCCBySite(LEFT));
+
+Return DS7_ICCCBySite;
+
+END;
+
+END;
