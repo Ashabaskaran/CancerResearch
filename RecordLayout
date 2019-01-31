@@ -1,0 +1,286 @@
+//Creating Record Structure Module for the Cancer Research Project
+
+EXPORT Record_Layout := MODULE
+
+// LAYOUT FOR 1999-2006
+//--------------------------------------------------------- Common ------------------------------------------------
+		EXPORT COMMON := RECORD
+				
+				REAL AGE_ADJUSTED_CI_LOWER;
+				REAL AGE_ADJUSTED_CI_UPPER;
+				REAL AGE_ADJUSTED_RATE;
+				STRING BEHAVIOR;
+				INTEGER COUNT1;
+				INTEGER POPULATION;
+				STRING SEX;
+				STRING SITE;
+				INTEGER YEAR;
+				REAL CRUDE_CI_LOWER;
+				REAL CRUDE_CI_UPPER;
+				REAL CRUDE_RATE;
+	
+		END;
+		
+//-------------------------------------------------------Age_Adjusted------------------------------------------------------------	
+
+		EXPORT Age_Adjusted := RECORD
+				
+					STRING	AGE;
+					REAL	AGE_ADJUSTED_CI_LOWER;
+					REAL	AGE_ADJUSTED_CI_UPPER;
+					REAL	AGE_ADJUSTED_RATE;
+					INTEGER COUNT1;
+					
+		END;		
+		
+//-------------------------------------------------------Age_Specific-----------------------------------------------------------
+
+		EXPORT Age_Specific := RECORD
+				
+					STRING AGE;		
+					REAL	AGE_SPECIFIC_CI_LOWER;
+					REAL	AGE_SPECIFIC_CI_UPPER;
+					REAL	AGE_SPECIFIC_RATE;
+					INTEGER COUNT1;
+					
+		END;				
+	
+//--------------------------------------------------------- BrainBySite ------------------------------------------------
+	
+		EXPORT BrainBySite := RECORD
+				
+				STRING AGE;
+				COMMON;
+				
+		END;
+			
+//-------------------------------------------------------ByAge-------------------------------------------------------------
+		EXPORT ByAge := RECORD
+
+				STRING	AGE;
+				REAL	CI_LOWER;
+				REAL	CI_UPPER;
+				INTEGER COUNT1;
+				STRING EVENT_TYPE;
+				INTEGER POPULATION;
+				STRING RACE;
+				REAL RATE;
+				STRING SEX;
+				STRING SITE;
+				INTEGER YEAR;
+					
+		END;
+		
+//-------------------------------------------------------ByArea-------------------------------------------------------------
+		EXPORT ByArea := RECORD
+
+				STRING AREA;
+				REAL AGE_ADJUSTED_CI_LOWER;
+				REAL AGE_ADJUSTED_CI_UPPER;
+				REAL AGE_ADJUSTED_RATE;
+				INTEGER COUNT1;
+				INTEGER EVENT_TYPE;
+				INTEGER POPULATION;
+				STRING RACE;
+				STRING SEX;
+				STRING SITE;
+				INTEGER YEAR;
+				REAL CRUDE_CI_LOWER;
+				REAL CRUDE_CI_UPPER;
+				REAL CRUDE_RATE;
+					
+		END;
+		
+//-------------------------------------------------------BySite-------------------------------------------------------------
+		EXPORT BySite := RECORD
+				
+					INTEGER YEAR;
+					STRING RACE;
+					STRING SEX;
+					STRING SITE;	
+					STRING EVENT_TYPE;	
+					REAL AGE_ADJUSTED_CI_LOWER;	
+					REAL AGE_ADJUSTED_CI_UPPER;	
+					REAL AGE_ADJUSTED_RATE;
+					INTEGER COUNT1;
+					INTEGER POPULATION;
+					REAL CRUDE_CI_LOWER;
+					REAL CRUDE_CI_UPPER;
+					REAL CRUDE_RATE;
+				
+		END;
+		
+//-------------------------------------------------------ChildByAge_ADJ------------------------------------------------------------
+		EXPORT ChildByAge_ADJ := RECORD
+					
+					Age_Adjusted;
+					STRING EVENT_TYPE;
+					INTEGER POPULATION;
+					STRING SITE;
+					INTEGER YEAR;
+				
+		END;		
+		
+//-------------------------------------------------------ChildByAge_CR------------------------------------------------------------
+		EXPORT ChildByAge_CR := RECORD
+				
+					Age_Specific;	
+					STRING EVENT_TYPE;
+					INTEGER POPULATION;
+					STRING SITE;
+					INTEGER YEAR;
+				
+		END;		
+		
+//-------------------------------------------------------ChildBySite------------------------------------------------------------
+		EXPORT ChildBySite := RECORD
+				
+					Age_Adjusted;
+					STRING	EVENT_TYPE;
+					INTEGER	POPULATION;
+					STRING	RACE;
+					STRING	SEX;
+					STRING	SITE;
+					INTEGER	YEAR;
+					REAL	CRUDE_CI_LOWER;
+					REAL	CRUDE_CI_UPPER;
+					REAL	CRUDE_RATE;
+				
+		END;	
+		
+//-------------------------------------------------------ICCCByAge_ADJ------------------------------------------------------------	
+
+		EXPORT ICCCByAge_ADJ := RECORD
+				
+					Age_Adjusted;
+					STRING	ICCC_GROUP;
+					INTEGER	POPULATION;
+					INTEGER	YEAR;
+
+		END;			
+
+//-------------------------------------------------------ICCCByAge_CR--------------------------------------------------------------
+
+		EXPORT ICCCByAge_CR := RECORD
+				
+					Age_Specific;
+					STRING	ICCC_GROUP;
+					INTEGER	POPULATION;
+					INTEGER	YEAR;
+
+		END;		
+		
+//------------------------------------------------------ICCCBySite--------------------------------------------------------------------------
+
+		EXPORT ICCCBySite := RECORD
+				
+					REAL	AGE_ADJUSTED_CI_LOWER;
+					REAL	AGE_ADJUSTED_CI_UPPER;
+					REAL	AGE_ADJUSTED_RATE;
+					INTEGER	COUNT1;
+					STRING	ICCC_GROUP;
+					INTEGER	POPULATION;
+					STRING	AGE;
+					STRING	RACE;
+					STRING	SEX;
+					INTEGER	YEAR;
+					REAL	CRUDE_CI_LOWER;
+					REAL	CRUDE_CI_UPPER;
+					REAL	CRUDE_RATE;
+
+		END;	
+		
+		
+// LAYOUT FOR 1999-2015
+
+//--------------------------------------------------------- ByArea_County ------------------------------------------------
+	
+		EXPORT ByArea_County_2015 := RECORD
+				
+				STRING STATE;
+				ByArea;
+				
+		END;
+		
+		
+//----------------------------------------------------------Split_Age------------------------------------------------------------------------
+		EXPORT Split_Age := RECORD
+		
+				INTEGER FROM_AGE;
+				INTEGER TO_AGE;
+				
+		END;
+//--------------------------------------------------------- Split_BrainBySite ------------------------------------------------
+	
+		EXPORT Split_BrainBySite := RECORD
+				Split_Age;
+				BrainBySite;
+				
+		END;		
+
+//--------------------------------------------------------- Split_ByAge ------------------------------------------------
+	
+		EXPORT Split_ByAge := RECORD
+		
+				Split_Age;
+				ByAge;
+				
+		END;
+		
+//--------------------------------------------------------- Split_ChildByAge_ADJ ------------------------------------------------
+	
+		EXPORT Split_ChildByAge_ADJ := RECORD
+		
+				Split_Age;
+				ChildByAge_ADJ;
+				
+		END;	
+		
+//--------------------------------------------------------- Split_ChildByAge_CR ------------------------------------------------
+	
+		EXPORT Split_ChildByAge_CR := RECORD
+		
+				Split_Age;
+				ChildByAge_CR;
+				
+		END;		
+		
+		
+//--------------------------------------------------------- Split_ChildBySite ------------------------------------------------
+	
+		EXPORT Split_ChildBySite := RECORD
+		
+				Split_Age;
+				ChildBySite;
+				
+		END;	
+		
+//--------------------------------------------------------- Split_ICCCByAge_ADJ ------------------------------------------------
+	
+		EXPORT Split_ICCCByAge_ADJ := RECORD
+		
+				Split_Age;
+				ICCCByAge_ADJ;
+				
+		END;		
+		
+//--------------------------------------------------------- Split_ICCCByAge_CR ------------------------------------------------
+	
+		EXPORT Split_ICCCByAge_CR := RECORD
+		
+				Split_Age;
+				ICCCByAge_CR;
+				
+		END;	
+		
+//--------------------------------------------------------- Split_ICCCBySite ------------------------------------------------
+	
+		EXPORT Split_ICCCBySite := RECORD
+		
+				Split_Age;
+				ICCCBySite;
+				
+		END;	
+		
+		
+END;	
