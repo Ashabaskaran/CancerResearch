@@ -1,0 +1,56 @@
+//Merging files from all YEARS
+IMPORT CancerResearch as CR;
+
+EXPORT Files_allYear_Merge := MODULE
+
+//------------------------------------------------BrainBySite-------------------------------------------------------------------------------------------
+EXPORT BrainBySite_Merge := CR.ReadFiles.Read_BrainBySite + CR.ReadFiles.Read_BrainBySite_2007 + CR.ReadFiles.Read_BrainBySite_2008 + CR.ReadFiles.Read_BrainBySite_2009 +
+												 CR.ReadFiles.Read_BrainBySite_2010 + CR.ReadFiles.Read_BrainBySite_2011 + CR.ReadFiles.Read_BrainBySite_2012 + CR.ReadFiles.Read_BrainBySite_2013 +
+												 CR.ReadFiles.Read_BrainBySite_2014 + CR.ReadFiles.Read_BrainBySite_2015 ;
+												 
+//------------------------------------------------ByAge-------------------------------------------------------------------------------------------												 
+EXPORT ByAge_Merge := CR.ReadFiles.Read_ByAge + CR.ReadFiles.Read_ByAge_2007 + CR.ReadFiles.Read_ByAge_2008 + CR.ReadFiles.Read_ByAge_2009 +
+												 CR.ReadFiles.Read_ByAge_2010 + CR.ReadFiles.Read_ByAge_2011 + CR.ReadFiles.Read_ByAge_2012 + CR.ReadFiles.Read_ByAge_2013 +
+												 CR.ReadFiles.Read_ByAge_2014 + CR.ReadFiles.Read_ByAge_2015 ;
+												 
+//------------------------------------------------ByArea-------------------------------------------------------------------------------------------														 
+EXPORT ByArea_Merge := CR.ReadFiles.Read_ByArea + CR.ReadFiles.Read_ByArea_2007 + CR.ReadFiles.Read_ByArea_2008 + CR.ReadFiles.Read_ByArea_2009 +
+												 CR.ReadFiles.Read_ByArea_2010 + CR.ReadFiles.Read_ByArea_2011 + CR.ReadFiles.Read_ByArea_2012 + CR.ReadFiles.Read_ByArea_2013 +
+												 CR.ReadFiles.Read_ByArea_2014 + CR.ReadFiles.Read_ByArea_2015 ;			
+												 
+//------------------------------------------------BySite-------------------------------------------------------------------------------------------														 
+EXPORT BySite_Merge := CR.ReadFiles.Read_BySite + CR.ReadFiles.Read_BySite_2007 + CR.ReadFiles.Read_BySite_2008 + CR.ReadFiles.Read_BySite_2009 +
+												 CR.ReadFiles.Read_BySite_2010 + CR.ReadFiles.Read_BySite_2011 + CR.ReadFiles.Read_BySite_2012 + CR.ReadFiles.Read_BySite_2013 +
+												 CR.ReadFiles.Read_BySite_2014 + CR.ReadFiles.Read_BySite_2015 ;												 
+												 
+//------------------------------------------------ChildByAge_ADJ-------------------------------------------------------------------------------------------		
+EXPORT ChildByAge_ADJ_Merge := CR.ReadFiles.Read_ChildByAge_ADJ + CR.ReadFiles.Read_ChildByAge_ADJ_2007 + CR.ReadFiles.Read_ChildByAge_ADJ_2008 + CR.ReadFiles.Read_ChildByAge_ADJ_2009 +
+												 CR.ReadFiles.Read_ChildByAge_ADJ_2010 + CR.ReadFiles.Read_ChildByAge_ADJ_2011 + CR.ReadFiles.Read_ChildByAge_ADJ_2012 + CR.ReadFiles.Read_ChildByAge_ADJ_2013 +
+												 CR.ReadFiles.Read_ChildByAge_ADJ_2014 + CR.ReadFiles.Read_ChildByAge_ADJ_2015 ;
+												 
+//------------------------------------------------ChildByAge_CR-------------------------------------------------------------------------------------------		
+EXPORT ChildByAge_CR_Merge := CR.ReadFiles.Read_ChildByAge_CR + CR.ReadFiles.Read_ChildByAge_CR_2007 + CR.ReadFiles.Read_ChildByAge_CR_2008 + CR.ReadFiles.Read_ChildByAge_CR_2009 +
+												 CR.ReadFiles.Read_ChildByAge_CR_2010 + CR.ReadFiles.Read_ChildByAge_CR_2011 + CR.ReadFiles.Read_ChildByAge_CR_2012 + CR.ReadFiles.Read_ChildByAge_CR_2013 +
+												 CR.ReadFiles.Read_ChildByAge_CR_2014 + CR.ReadFiles.Read_ChildByAge_CR_2015 ;
+												 
+//------------------------------------------------ChildBySite-------------------------------------------------------------------------------------------		
+EXPORT ChildBySite_Merge := CR.ReadFiles.Read_ChildBySite + CR.ReadFiles.Read_ChildBySite_2007 + CR.ReadFiles.Read_ChildBySite_2008 + CR.ReadFiles.Read_ChildBySite_2009 +
+												 CR.ReadFiles.Read_ChildBySite_2010 + CR.ReadFiles.Read_ChildBySite_2011 + CR.ReadFiles.Read_ChildBySite_2012 + CR.ReadFiles.Read_ChildBySite_2013 +
+												 CR.ReadFiles.Read_ChildBySite_2014 + CR.ReadFiles.Read_ChildBySite_2015 ;	
+												 
+//------------------------------------------------ICCCByAge_ADJ-------------------------------------------------------------------------------------------		
+EXPORT ICCCByAge_ADJ_Merge := CR.ReadFiles.Read_ICCCByAge_ADJ + CR.ReadFiles.Read_ICCCByAge_ADJ_2007 + CR.ReadFiles.Read_ICCCByAge_ADJ_2008 + CR.ReadFiles.Read_ICCCByAge_ADJ_2009 +
+												 CR.ReadFiles.Read_ICCCByAge_ADJ_2010 + CR.ReadFiles.Read_ICCCByAge_ADJ_2011 + CR.ReadFiles.Read_ICCCByAge_ADJ_2012 + CR.ReadFiles.Read_ICCCByAge_ADJ_2013 +
+												 CR.ReadFiles.Read_ICCCByAge_ADJ_2014 + CR.ReadFiles.Read_ICCCByAge_ADJ_2015 ;
+												 
+//------------------------------------------------ICCCByAge_CR-------------------------------------------------------------------------------------------		
+EXPORT ICCCByAge_CR_Merge := CR.ReadFiles.Read_ICCCByAge_CR + CR.ReadFiles.Read_ICCCByAge_CR_2007 + CR.ReadFiles.Read_ICCCByAge_CR_2008 + CR.ReadFiles.Read_ICCCByAge_CR_2009 +
+												 CR.ReadFiles.Read_ICCCByAge_CR_2010 + CR.ReadFiles.Read_ICCCByAge_CR_2011 + CR.ReadFiles.Read_ICCCByAge_CR_2012 + CR.ReadFiles.Read_ICCCByAge_CR_2013 +
+												 CR.ReadFiles.Read_ICCCByAge_CR_2014 + CR.ReadFiles.Read_ICCCByAge_CR_2015 ;
+												 
+//------------------------------------------------ICCCBySite-------------------------------------------------------------------------------------------		
+EXPORT ICCCBySite_Merge := CR.ReadFiles.Read_ICCCBySite + CR.ReadFiles.Read_ICCCBySite_2007 + CR.ReadFiles.Read_ICCCBySite_2008 + CR.ReadFiles.Read_ICCCBySite_2009 +
+												 CR.ReadFiles.Read_ICCCBySite_2010 + CR.ReadFiles.Read_ICCCBySite_2011 + CR.ReadFiles.Read_ICCCBySite_2012 + CR.ReadFiles.Read_ICCCBySite_2013 +
+												 CR.ReadFiles.Read_ICCCBySite_2014 + CR.ReadFiles.Read_ICCCBySite_2015 ;												 
+
+END;										 
